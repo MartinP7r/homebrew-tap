@@ -1,20 +1,20 @@
 class GitTwig < Formula
   desc "A high-performance, interactive git status visualizer"
   homepage "https://martinp7r.github.io/git-twig/"
-  version "1.2.7"
+  version "1.2.8"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/MartinP7r/git-twig/releases/download/v1.2.7/git-twig-aarch64-apple-darwin.tar.xz"
-      sha256 "0e40f7f4c2084e0de542e6b9200518c67fb446923a765a239dc62c653105c10a"
+      url "https://github.com/MartinP7r/git-twig/releases/download/v1.2.8/git-twig-aarch64-apple-darwin.tar.xz"
+      sha256 "5a2f219b2e44b1faf5e9f9515433c6d2ac624b7d4e287d075facf1af3b81863b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MartinP7r/git-twig/releases/download/v1.2.7/git-twig-x86_64-apple-darwin.tar.xz"
-      sha256 "224dedef86914bc8b26391d6aed2514f735ea673d190572b76ca32449cbeb7d2"
+      url "https://github.com/MartinP7r/git-twig/releases/download/v1.2.8/git-twig-x86_64-apple-darwin.tar.xz"
+      sha256 "9dc2520066ec2e280e2fcfbb8943466cfb237af5c077ef57abfd4b53860d91ab"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-      url "https://github.com/MartinP7r/git-twig/releases/download/v1.2.7/git-twig-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "29eb4378c7c5f61aacd5b4f70d67b5b0945940caf60a0a1de1316a8c33cce38f"
+      url "https://github.com/MartinP7r/git-twig/releases/download/v1.2.8/git-twig-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "a926ad84ff5a2091b8f43207eb8f7eabc795687d659e177450d2b954c4844c8f"
   end
   license "MIT"
 
