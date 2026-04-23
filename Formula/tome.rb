@@ -1,20 +1,20 @@
 class Tome < Formula
   desc "Sync AI coding skills across tools"
   homepage "https://github.com/martinP7r/tome"
-  version "0.6.2"
+  version "0.7.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/martinP7r/tome/releases/download/v0.6.2/tome-aarch64-apple-darwin.tar.xz"
-      sha256 "d782f2929b65ca46591104885f34704cd7b9a92d439b4311d50aecdd147510a1"
+      url "https://github.com/martinP7r/tome/releases/download/v0.7.0/tome-aarch64-apple-darwin.tar.xz"
+      sha256 "28141c20d4a82d256cd4a339032f324ff58858dc8a945001dab570c3878cfeba"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/martinP7r/tome/releases/download/v0.6.2/tome-x86_64-apple-darwin.tar.xz"
-      sha256 "e41e6452e4c65777591cf209cf280277d462214aefd3554a79fd37be2ac5d8b6"
+      url "https://github.com/martinP7r/tome/releases/download/v0.7.0/tome-x86_64-apple-darwin.tar.xz"
+      sha256 "c32e7439cb8f75cd29173b85454fa2c417850c8671395be9d0d29e848406e6d3"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/martinP7r/tome/releases/download/v0.6.2/tome-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "98f47cee31dd5c90f81255a4daba42ab9469a4de9d66a271f17bbbf5c8912b26"
+    url "https://github.com/martinP7r/tome/releases/download/v0.7.0/tome-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "1389f9f98f130f1c31b2a423248650db58794573b5ad406f95cf86458cfc2e19"
   end
   license "MIT"
 
