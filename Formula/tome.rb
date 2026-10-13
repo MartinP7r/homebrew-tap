@@ -1,20 +1,19 @@
 class Tome < Formula
-  desc "Sync AI coding skills across tools"
-  homepage "https://github.com/martinP7r/tome"
-  version "0.16.4"
+  desc "Manage and synchronize AI coding skills across tools"
+  homepage "https://github.com/MartinP7r/tome"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/martinP7r/tome/releases/download/v0.16.4/tome-aarch64-apple-darwin.tar.xz"
-      sha256 "2b9b8ed9bc5210daedf24125239801aebfaf08b9142558171f882254848ac2bf"
+      url "https://github.com/martinP7r/tome/releases/download/v0.17.0/tome-aarch64-apple-darwin.tar.xz"
+      sha256 "3fd7bb6c562c52395b1c5b96b2c4d479ed89eb2b2d3799ce1e44a669bf8d9f58"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/martinP7r/tome/releases/download/v0.16.4/tome-x86_64-apple-darwin.tar.xz"
-      sha256 "277a5ad57907fe3d299ea2c28a62f33802f579b51d0f0fdc124bbcc92633e9b5"
+      url "https://github.com/martinP7r/tome/releases/download/v0.17.0/tome-x86_64-apple-darwin.tar.xz"
+      sha256 "4228f216ea1df23931f20aaa6cbc359e3db4789fd70890c82df81b20ff168ab7"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/martinP7r/tome/releases/download/v0.16.4/tome-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "9bcc739f96ec9b3c93137373646f9e2948224fc12ecfa92e335a3f71f227d34e"
+    url "https://github.com/martinP7r/tome/releases/download/v0.17.0/tome-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "13d910e0c4ed83d68853ea5b74303e0cc3a42e59bbcddf55ff808905f486d9bb"
   end
   license "MIT"
 
@@ -40,9 +39,15 @@ class Tome < Formula
   end
 
   def install
-    bin.install "tome" if OS.mac? && Hardware::CPU.arm?
-    bin.install "tome" if OS.mac? && Hardware::CPU.intel?
-    bin.install "tome" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "tome"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "tome"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "tome"
+    end
 
     install_binary_aliases!
 
@@ -53,5 +58,9 @@ class Tome < Formula
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
     pkgshare.install(*leftover_contents) unless leftover_contents.empty?
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/tome --version")
   end
 end
